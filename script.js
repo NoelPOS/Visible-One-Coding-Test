@@ -1,9 +1,12 @@
 // Mobile Menu Toggle
+console.log('Script loaded');
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
 
 if (menuToggle && navMenu) {
+    console.log('Menu toggle and nav menu found');
     menuToggle.addEventListener('click', () => {
+        console.log('Menu toggle clicked');
         navMenu.classList.toggle('active');
         
         // Animate hamburger menu
@@ -41,6 +44,8 @@ if (menuToggle && navMenu) {
             spans[2].style.transform = 'none';
         }
     });
+} else {
+    console.log('Menu toggle or nav menu not found');
 }
 
 // Smooth Scrolling for Navigation Links
@@ -53,6 +58,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Join buttons scroll to footer
+const joinBtns = document.querySelectorAll('.navbar-cta, .navbar-cta-mobile');
+joinBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const footer = document.querySelector('#footer');
+        if (footer) {
+            const headerOffset = 80;
+            const elementPosition = footer.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
             window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
@@ -170,4 +192,50 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// Review Slider
+console.log('Window width:', window.innerWidth);
+if (window.innerWidth < 768) {
+  console.log('Enabling review slider');
+  const reviewCards = document.querySelector('.review-cards');
+  const prevBtn = document.querySelector('.review-nav-prev');
+  const nextBtn = document.querySelector('.review-nav-next');
+  console.log('Review cards:', reviewCards);
+  console.log('Prev btn:', prevBtn);
+  console.log('Next btn:', nextBtn);
+  let currentIndex = 0;
+  const totalCards = document.querySelectorAll('.review-card').length;
+  console.log('Total cards:', totalCards);
+
+  function updateSlide() {
+    const cardWidth = document.querySelector('.review-card').offsetWidth;
+    console.log('Card width:', cardWidth);
+    reviewCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    console.log('Prev clicked');
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalCards - 1;
+    updateSlide();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    console.log('Next clicked');
+    currentIndex = (currentIndex < totalCards - 1) ? currentIndex + 1 : 0;
+    updateSlide();
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth < 768) {
+      updateSlide();
+    } else {
+      reviewCards.style.transform = 'translateX(0)';
+    }
+  });
+
+  // Initialize
+  updateSlide();
+} else {
+  console.log('Review slider not enabled, width >=768');
+}
 

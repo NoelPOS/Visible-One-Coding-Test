@@ -4,8 +4,12 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "SF Pro Text", sans-serif;
   background-color: #F8F5F0;
   overflow-x: hidden;
 }
@@ -19,6 +23,7 @@ body {
   padding: 20px 0;
   z-index: 1000;
   background-color: #F8F5F0;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-container {
@@ -34,6 +39,7 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 .navbar-logo img {
@@ -58,13 +64,13 @@ body {
   text-decoration: none;
   color: #1a3a3a;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
   position: relative;
 }
 
 .navbar-menu a:hover {
-  color: #ff1493;
+  color: #FF60E6;
 }
 
 .navbar-menu a::after {
@@ -74,7 +80,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   transition: width 0.3s ease;
 }
 
@@ -84,7 +90,7 @@ body {
 
 .navbar-cta {
   padding: 12px 30px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   color: white;
   border: none;
   border-radius: 50px;
@@ -93,12 +99,12 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
-  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 96, 230, 0.3);
 }
 
 .navbar-cta:hover {
-  background-color: #ff0080;
-  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+  background-color: #FF60E6;
+  box-shadow: 0 6px 20px rgba(255, 96, 230, 0.4);
   transform: translateY(-2px);
 }
 
@@ -188,9 +194,10 @@ body {
 
 .hand-2 {
   bottom: 100px;
-  right: -70px;
+  right: -50px;
   width: 300px;
   height: 300px;
+  transform: rotate(-25deg);
 }
 
 .hand-2 img {
@@ -286,7 +293,7 @@ body {
   left: 0;
   right: 0;
   height: 12px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   border-radius: 6px;
   z-index: -1;
 }
@@ -332,16 +339,16 @@ body {
   font-weight: 600;
   border: none;
   border-radius: 50px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 96, 230, 0.3);
 }
 
 .join-btn:hover {
-  background-color: #ff0080;
-  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+  background-color: #FF60E6;
+  box-shadow: 0 6px 20px rgba(255, 96, 230, 0.4);
   transform: translateY(-2px);
 }
 
@@ -400,7 +407,7 @@ body {
   right: 200px;
   width: 350px;
   height: 6px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   border-radius: 3px;
 }
 
@@ -458,16 +465,16 @@ body {
 }
 
 .partner-card {
-  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  background: linear-gradient(135deg, #FF60E6 0%, #FF60E6 100%);
   border-radius: 20px;
   padding: 40px 35px;
-  color: #000000;
+  color: #1F392C;
   min-width: 480px;
   max-width: 480px;
   display: flex;
   gap: 25px;
   align-items: flex-start;
-  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.25);
+  box-shadow: 0 8px 30px rgba(255, 96, 230, 0.25);
   flex-shrink: 0;
 }
 
@@ -497,13 +504,13 @@ body {
   font-weight: 600;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
-  color: #000000;
+  color: #1F392C;
 }
 
 .partner-text {
   font-size: 14px;
   line-height: 1.7;
-  color: #000000;
+  color: #1F392C;
 }
 
 .partner-card-pinterest {
@@ -675,7 +682,7 @@ body {
 
 .howwework2-subtitle {
   font-size: 25px;
-  color: #000000;
+  color: #1F392C;
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: 600;
@@ -695,7 +702,7 @@ body {
 
 .howwework2-description {
   font-size: 16px;
-  color: #000000;
+  color: #1F392C;
   line-height: 1.8;
   font-weight: 400;
 }
@@ -887,7 +894,7 @@ body {
   position: relative;
   display: inline-block;
   color: #1a3a3a;
-  border: 3px solid #ff1493;
+  border: 3px solid #FF60E6;
   border-radius: 8px;
   padding: 2px 8px;
   margin: 0;
@@ -914,7 +921,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   border-radius: 2px;
 }
 
@@ -946,9 +953,9 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #ff1493;
+  border: 2px solid #FF60E6;
   background-color: transparent;
-  color: #ff1493;
+  color: #FF60E6;
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -958,25 +965,23 @@ body {
 }
 
 .review-nav-btn:hover {
-  background-color: #ff1493;
+  background-color: #FF60E6;
   color: white;
 }
 
 .review-nav-next {
-  background-color: #ff1493;
+  background-color: #FF60E6;
   color: white;
 }
 
 .review-nav-next:hover {
-  background-color: #ff0080;
+  background-color: #FF60E6;
 }
 
 .review-cards-wrapper {
-  overflow-x: visible;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
+  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .review-cards-wrapper::-webkit-scrollbar {
@@ -990,14 +995,15 @@ body {
   gap: 30px;
   min-width: max-content;
   padding-right: 20px;
+  transition: transform 0.3s ease;
 }
 
 .review-card {
-  background-color: #ffc0cb;
+  background-color: #FF60E6;
   border-radius: 20px;
   padding: 35px;
   color: white;
-  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.15);
+  box-shadow: 0 8px 30px rgba(255, 96, 230, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 500px;
   min-height: 320px;
@@ -1009,7 +1015,7 @@ body {
 
 .review-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(255, 20, 147, 0.35);
+  box-shadow: 0 12px 40px rgba(255, 96, 230, 0.35);
 }
 
 .review-card-avatar {
@@ -1033,14 +1039,14 @@ body {
 .review-card-name {
   font-size: 20px;
   font-weight: 700;
-  color: #000000;
+  color: #1F392C;
   margin-bottom: 15px;
 }
 
 .review-card-text {
   font-size: 14px;
   line-height: 1.7;
-  color: #000000;
+  color: #1F392C;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -1051,8 +1057,8 @@ body {
 
 /* Card 2 (Amanda) has gradient background */
 .review-card:nth-child(2) {
-  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
-  box-shadow: 0 8px 30px rgba(255, 20, 147, 0.25);
+  background: linear-gradient(135deg, #FF60E6 0%, #FF60E6 100%);
+  box-shadow: 0 8px 30px rgba(255, 96, 230, 0.25);
 }
 
 /* Card 3 (Nicholas Love) overflows to the right */
@@ -1079,7 +1085,7 @@ body {
 .reliability-left-card {
   flex: 1;
   min-width: 300px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -1150,7 +1156,7 @@ body {
 }
 
 .footer-title {
-  font-size: 48px;
+  font-size: 52px;
   font-weight: 700;
   color: #1a3a3a;
   line-height: 1.3;
@@ -1159,7 +1165,8 @@ body {
 }
 
 .footer-subtitle {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   color: #1a3a3a;
   margin-bottom: 50px;
 }
@@ -1203,7 +1210,7 @@ body {
   font-weight: 600;
   border: none;
   border-radius: 50px;
-  background-color: #ff1493;
+  background-color: #FF60E6;
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1212,7 +1219,7 @@ body {
 }
 
 .footer-btn:hover {
-  background-color: #ff0080;
+  background-color: #FF60E6;
 }
 
 .footer-bottom {
@@ -1222,11 +1229,12 @@ body {
   padding-top: 50px;
   flex-wrap: wrap;
   gap: 30px;
-  color: black;
+  color: #1F392C;
 }
 
 .footer-copyright {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   color: #1a3a3a;
   letter-spacing: 0.5px;
 }
@@ -1238,15 +1246,15 @@ body {
 }
 
 .footer-link {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
   color: #1a3a3a;
   text-decoration: none;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #ff1493;
+  color: #FF60E6;
 }
 
 .footer-social {
@@ -1266,7 +1274,7 @@ body {
 }
 
 .footer-social-link:hover {
-  background-color: #ff1493;
+  background-color: #FF60E6;
 }
 
 .footer-social-link img {
@@ -1276,7 +1284,7 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 768px) {
   .navbar-menu {
     position: fixed;
     top: 80px;
@@ -1314,7 +1322,7 @@ body {
     width: 100%;
     padding: 12px 30px;
     margin-top: 20px;
-    background-color: #ff1493;
+    background-color: #FF60E6;
     color: white;
     border: none;
     border-radius: 50px;
@@ -1322,13 +1330,13 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 96, 230, 0.3);
     font-family: inherit;
   }
 
   .navbar-cta-mobile:hover {
-    background-color: #ff0080;
-    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+    background-color: #FF60E6;
+    box-shadow: 0 6px 20px rgba(255, 96, 230, 0.4);
     transform: translateY(-2px);
   }
 }
@@ -1373,12 +1381,14 @@ body {
   }
 
   .hand-1,
-  .hand-2 {
+  .hand-2,
+  .social-icon,
+  .vector,
+  .partners-vector,
+  .hww2-vector,
+  .hww2-hand,
+  .hww2-heart {
     display: none;
-  }
-
-  .social-icon {
-    opacity: 0.5;
   }
 
   .partners-heading {
@@ -1394,12 +1404,35 @@ body {
     gap: 40px;
   }
 
+  .partners-content-wrapper {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .partners-white-card {
+    position: static;
+    width: 100%;
+    height: auto;
+    z-index: auto;
+  }
+
+  .partners-cards-wrapper {
+    position: static;
+    left: auto;
+    right: auto;
+    overflow-x: hidden;
+  }
+
   .partners-cards {
     flex-direction: column;
+    gap: 20px;
   }
 
   .partner-card {
     min-width: 100%;
+    max-width: 100%;
   }
 
   .howwework1-title {
@@ -1425,11 +1458,6 @@ body {
 
   .howwework3-step-text {
     font-size: 14px;
-  }
-
-  .hww2-hand-left,
-  .hww2-hand-right {
-    opacity: 0.5;
   }
 
   .hww2-vector-left,
@@ -1505,9 +1533,9 @@ body {
     display: none;
   }
 
-  .vector-left,
-  .vector-right {
-    opacity: 0.3;
+  .vector,
+  .partners-vector {
+    display: none;
   }
 
   .partners {
@@ -1634,10 +1662,11 @@ body {
   .review-card {
     min-width: 280px;
     max-width: 280px;
+    width: 100%;
   }
 
   .footer-title {
-    font-size: 32px;
+    font-size: 36px;
   }
 
   .footer-input {
@@ -1668,7 +1697,15 @@ body {
     justify-content: center;
   }
 
-  .reliability-title {
-    font-size: 32px;
+  .partners-description {
+    width: 100%;
+  }
+
+  .howwework3-step-text {
+    width: 100%;
+  }
+
+  .reliability-detail {
+    width: 100%;
   }
 }
