@@ -91,11 +91,11 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 50) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.15)';
+        navbar.style.backgroundColor = '#F8F5F0';
+        navbar.style.boxShadow = 'none';
     } else {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        navbar.style.backgroundColor = '#F8F5F0';
+        navbar.style.boxShadow = 'none';
     }
     
     lastScroll = currentScroll;
@@ -193,49 +193,31 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Review Slider
-console.log('Window width:', window.innerWidth);
-if (window.innerWidth < 768) {
-  console.log('Enabling review slider');
-  const reviewCards = document.querySelector('.review-cards');
-  const prevBtn = document.querySelector('.review-nav-prev');
-  const nextBtn = document.querySelector('.review-nav-next');
-  console.log('Review cards:', reviewCards);
-  console.log('Prev btn:', prevBtn);
-  console.log('Next btn:', nextBtn);
-  let currentIndex = 0;
-  const totalCards = document.querySelectorAll('.review-card').length;
-  console.log('Total cards:', totalCards);
+// Review Slider - Works on all screen sizes
+const reviewCards = document.querySelector('.review-cards');
+const prevBtn = document.querySelector('.review-nav-prev');
+const nextBtn = document.querySelector('.review-nav-next');
+let currentIndex = 0;
+const totalCards = document.querySelectorAll('.review-card').length;
 
-  function updateSlide() {
-    const cardWidth = document.querySelector('.review-card').offsetWidth;
-    console.log('Card width:', cardWidth);
-    reviewCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  }
-
-  prevBtn.addEventListener('click', () => {
-    console.log('Prev clicked');
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalCards - 1;
-    updateSlide();
-  });
-
-  nextBtn.addEventListener('click', () => {
-    console.log('Next clicked');
-    currentIndex = (currentIndex < totalCards - 1) ? currentIndex + 1 : 0;
-    updateSlide();
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth < 768) {
-      updateSlide();
-    } else {
-      reviewCards.style.transform = 'translateX(0)';
-    }
-  });
-
-  // Initialize
-  updateSlide();
-} else {
-  console.log('Review slider not enabled, width >=768');
+function updateSlide() {
+  const cardWidth = document.querySelector('.review-card').offsetWidth;
+  const gap = window.innerWidth >= 768 ? 30 : 15;
+  reviewCards.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
 }
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalCards - 1;
+  updateSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex < totalCards - 1) ? currentIndex + 1 : 0;
+  updateSlide();
+});
+
+window.addEventListener('resize', updateSlide);
+
+// Initialize
+updateSlide();
 
